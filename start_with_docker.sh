@@ -4,4 +4,4 @@ touch database/database.sqlite
 ./vendor/bin/sail artisan config:cache &&
 ./vendor/bin/sail artisan route:cache &&
 ./vendor/bin/sail artisan view:cache &&
-./vendor/bin/sail artisan migrate --seed --force
+./vendor/bin/sail artisan migrate:fresh --seed --force

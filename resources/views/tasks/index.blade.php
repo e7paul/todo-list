@@ -24,6 +24,7 @@
                     value="1"
                     onclick="event.preventDefault(); this.closest('form').submit();"
                     @checked($task->is_done)
+                    class="form-check-input mt-0"
                     />
             </form>
             </td>

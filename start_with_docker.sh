@@ -1,4 +1,5 @@
 composer install --optimize-autoloader &&
+touch database/database.sqlite
 ./vendor/bin/sail up -d &&
 ./vendor/bin/sail artisan config:cache &&
 ./vendor/bin/sail artisan route:cache &&

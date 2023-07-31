@@ -35,5 +35,3 @@ git clone https://github.com/e7paul/todo-list
 cd todo-list
 ./start_without_docker.sh
 ```
-
-touch database/database.sqlite

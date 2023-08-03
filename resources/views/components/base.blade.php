@@ -17,10 +17,10 @@
 <body class="antialiased">
     <div class="container">
         
-        @include('layouts.navigation')
+        <x-navigation />
 
         <main>
-            @yield('main')
+            {{ $slot }}
         </main>
     </div>
 </body>

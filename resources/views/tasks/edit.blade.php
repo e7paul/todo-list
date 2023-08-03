@@ -1,21 +1,15 @@
-@extends('layouts.base')
-
-@section('main')
-    <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+<x-base>
+    <div class="mx-auto w-50 mt-5">
+        @if (isset($task))
         <form method="POST" action="{{ route('tasks.update', $task) }}">
             @csrf
             @method('patch')
-            <textarea
-                name="message"
-                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            >{{ old('message', $task->message) }}</textarea>
+            <textarea name="message" class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">{{ old('message', $task->message) }}</textarea>
             <div class="form-check mt-2">
-                <input type="checkbox"
-                    name="is_done"
-                    @checked($task->is_done)
-                    class="form-check-input"
-                    id="checkbox"
-                    />
+                <input type="checkbox" name="is_done" @checked($task->is_done)
+                class="form-check-input"
+                id="checkbox"
+                />
                 <label class="form-check-label" for="checkbox">
                     Is task done?
                 </label>
@@ -26,5 +20,6 @@
                 <a href="{{ route('tasks.index') }}">{{ __('Cancel') }}</a>
             </div>
         </form>
+        @endif
     </div>
-@endsection('main')
+</x-base>

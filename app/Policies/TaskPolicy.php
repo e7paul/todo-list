@@ -21,7 +21,7 @@ class TaskPolicy
      */
     public function view(User $user, Task $task): bool
     {
-        //
+        return $this->update($user, $task);
     }
 
     /**

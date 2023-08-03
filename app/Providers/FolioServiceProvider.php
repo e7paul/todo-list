@@ -22,7 +22,7 @@ class FolioServiceProvider extends ServiceProvider
     {
         Folio::route(resource_path('views/pages'), middleware: [
             '*' => [
-                //
+                 'auth',
             ],
         ]);
     }
